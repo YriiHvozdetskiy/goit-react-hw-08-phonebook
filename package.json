@@ -1,8 +1,7 @@
 {
-  "name": "hw-05-movies",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://YriiHvozdetskiy.github.io/my-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
