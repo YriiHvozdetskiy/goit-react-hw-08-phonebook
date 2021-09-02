@@ -1,6 +1,6 @@
 import {Route, Switch} from 'react-router-dom'
 import {HomePage} from "../HomePage/HomePage";
-import {ContactsList} from "../ContactsList/ContactsList";
+import {Contacts} from "../Contacts/Contacts";
 import {SingUp} from "../SingUp/SingUp";
 import {SingIn} from "../SingIn/SingIn";
 
@@ -13,7 +13,7 @@ export const Main = () => {
 			<HomePage/>
 		  </Route>
 		  <Route path='/contacts'>
-			<ContactsList/>
+			<Contacts/>
 		  </Route>
 		  <Route path='/registration'>
 			<SingUp/>
