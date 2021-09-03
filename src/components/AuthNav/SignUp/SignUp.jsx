@@ -7,7 +7,7 @@ export const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleChange = ({target: {name, value}}) => {
 	switch (name) {
@@ -24,7 +24,7 @@ export const SignUp = () => {
 
   const handleSubmit = e => {
 	e.preventDefault();
-	// dispatch(authOperations.register({name, email, password}));
+	dispatch(authOperations.register({name, email, password}));
 	setName('')
 	setEmail('');
 	setPassword('');
