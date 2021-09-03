@@ -16,18 +16,6 @@ export const Navigation = () => {
 		  </NavLink>
 		</li>
 	  </ul>
-	  {/*<ul className={s.list}>*/}
-	  {/*<li className={s.item}>*/}
-	  {/*  <NavLink to='/register'>*/}
-	  {/*	Sign up*/}
-	  {/*  </NavLink>*/}
-	  {/*</li>*/}
-	  {/*<li className={s.item}>*/}
-	  {/*  <NavLink to='/login'>*/}
-	  {/*	Sign in*/}
-	  {/*  </NavLink>*/}
-	  {/*</li>*/}
-	  {/*</ul>*/}
 	</nav>)
 }
 
