@@ -15,7 +15,7 @@ export const Main = () => {
 		  <Route path='/contacts'>
 			<Contacts/>
 		  </Route>
-		  <Route path='/registration'>
+		  <Route path='/register'>
 			<SingUp/>
 		  </Route>
 		  <Route path='/login'>

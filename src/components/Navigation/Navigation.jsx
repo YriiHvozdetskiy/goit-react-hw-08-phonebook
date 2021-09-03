@@ -18,7 +18,7 @@ export const Navigation = () => {
 	  </ul>
 	  <ul className={s.list}>
 		<li className={s.item}>
-		  <NavLink to='/registration'>
+		  <NavLink to='/register'>
 			Sing up
 		  </NavLink>
 		</li>
