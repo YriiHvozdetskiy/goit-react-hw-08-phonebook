@@ -31,40 +31,38 @@ export const SignUp = () => {
   }
 
   return (
-	<>
-	  <div>
-		<h1> Sign Up(сторінка реєстрації)</h1>
-		<form className={s.form} onSubmit={handleSubmit}>
-		  <label className={s.label}>
-			name
-			<input type='text'
-				   name='name'
-				   value={name}
-				   onChange={handleChange}
-			/>
-		  </label>
-		  <label className={s.label}>
-			email
-			<input type='email'
-				   name='email'
-				   value={email}
-				   onChange={handleChange}
-			/>
-		  </label>
-		  <label className={s.label}>
-			password
-			<input type='password'
-				   name='password'
-				   value={password}
-				   onChange={handleChange}
-			/>
-		  </label>
-		  <button type='submit'>
-			Sign Up
-		  </button>
-		</form>
-	  </div>
-
-	</>)
+	<div>
+	  <h1> Sign Up(сторінка реєстрації)</h1>
+	  <form className={s.form} onSubmit={handleSubmit}>
+		<label className={s.label}>
+		  name
+		  <input type='text'
+				 name='name'
+				 value={name}
+				 onChange={handleChange}
+		  />
+		</label>
+		<label className={s.label}>
+		  email
+		  <input type='email'
+				 name='email'
+				 value={email}
+				 onChange={handleChange}
+		  />
+		</label>
+		<label className={s.label}>
+		  password
+		  <input type='password'
+				 name='password'
+				 value={password}
+				 onChange={handleChange}
+		  />
+		</label>
+		<button type='submit'>
+		  Sign Up
+		</button>
+	  </form>
+	</div>
+  )
 }
 
