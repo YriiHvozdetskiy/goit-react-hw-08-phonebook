@@ -1,8 +1,8 @@
 import {Route, Switch} from 'react-router-dom'
 import {HomePage} from "../HomePage/HomePage";
 import {Contacts} from "../Contacts/Contacts";
-import {SignUp} from "../SignUp/SignUp";
-import {SignIn} from "../SignIn/SignIn";
+import {SignUp} from "../AuthNav/SignUp/SignUp";
+import {SignIn} from "../AuthNav/SignIn/SignIn";
 
 export const Main = () => {
   return (
