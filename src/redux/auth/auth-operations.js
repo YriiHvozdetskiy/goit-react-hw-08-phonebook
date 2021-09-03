@@ -12,55 +12,61 @@ const token = {
   }
 }
 
-const register = createAsyncThunk('auth/register', async (credentials) => {
-  try {
-	const {data} = await axios.post('users/signup', credentials);
-	token.set(data.token);
-	return data;
-  } catch (error) {
+const register = createAsyncThunk('auth/register',
+  async (credentials) => {
+	try {
+	  const {data} = await axios.post('users/signup', credentials);
+	  token.set(data.token);
+	  return data;
+	} catch (error) {
 // TODO: Добавить обработку ошибки error.message
-  }
-})
+	}
+  })
 
-const logIn = createAsyncThunk('auth/login', async (credentials) => {
-  try {
-	const {data} = await axios.post('users/login', credentials);
-	token.set(data.token);
-	return data;
-  } catch (error) {
+const logIn = createAsyncThunk('auth/login',
+  async (credentials) => {
+	try {
+	  const {data} = await axios.post('users/login', credentials);
+	  token.set(data.token);
+	  return data;
+	} catch (error) {
 // TODO: Добавить обработку ошибки error.message
-  }
-})
+	}
+  })
 
-const logOut = createAsyncThunk('auth/logout', async () => {
-  try {
-	await axios.post('users/logout')
-	token.unset();
-  } catch (error) {
+const logOut = createAsyncThunk('auth/logout',
+  async () => {
+	try {
+	  await axios.post('users/logout')
+	  token.unset();
+	} catch (error) {
 // TODO: Добавить обработку ошибки error.message
-  }
-})
+	}
+  })
 
-const fetchCurrentUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) => {
-  const state = thunkAPI.getState();
-  // const persistedToken = state.auth.token;
+const fetchCurrentUser = createAsyncThunk('auth/refresh',
+  async (_, thunkAPI) => {
 
-  // if (persistedToken === null) return thunkAPI.rejectWithValue();
+	const state = thunkAPI.getState();
+	// const persistedToken = state.auth.token;
 
-  // token.set(persistedToken)
+	// if (persistedToken === null) return thunkAPI.rejectWithValue();
 
-  try {
-	const {data} = axios.get('users/current')
-	return data
-  } catch (error) {
+	// token.set(persistedToken)
 
-  }
-})
+	try {
+	  const {data} = axios.get('users/current')
+	  return data
+	} catch (error) {
+
+	}
+  })
 
 const operations = {
   register,
   logIn,
   logOut,
+  fetchCurrentUser
 }
 
 export default operations;
