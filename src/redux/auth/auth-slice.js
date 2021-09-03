@@ -6,7 +6,7 @@ const initialState = {
   token: null,
   isLoggedIn: false,
 }
-
+//TODO rejected, pending Для всіх
 const authSlice = createSlice({
   name: 'auth',
   initialState,
