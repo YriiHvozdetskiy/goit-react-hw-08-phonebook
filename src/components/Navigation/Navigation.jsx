@@ -19,12 +19,12 @@ export const Navigation = () => {
 	  <ul className={s.list}>
 		<li className={s.item}>
 		  <NavLink to='/register'>
-			Sing up
+			Sign up
 		  </NavLink>
 		</li>
 		<li className={s.item}>
 		  <NavLink to='/login'>
-			Sing in
+			Sign in
 		  </NavLink>
 		</li>
 	  </ul>

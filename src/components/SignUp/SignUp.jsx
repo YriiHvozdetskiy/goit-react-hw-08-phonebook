@@ -1,4 +1,4 @@
-export const  SingUp = () => {
+export const  SignUp = () => {
     
     return (
     <>

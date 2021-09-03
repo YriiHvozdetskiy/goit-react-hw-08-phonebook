@@ -1,8 +1,8 @@
 import {Route, Switch} from 'react-router-dom'
 import {HomePage} from "../HomePage/HomePage";
 import {Contacts} from "../Contacts/Contacts";
-import {SingUp} from "../SingUp/SingUp";
-import {SingIn} from "../SingIn/SingIn";
+import {SignUp} from "../SignUp/SignUp";
+import {SignIn} from "../SignIn/SignIn";
 
 export const Main = () => {
   return (
@@ -16,10 +16,10 @@ export const Main = () => {
 			<Contacts/>
 		  </Route>
 		  <Route path='/register'>
-			<SingUp/>
+			<SignUp/>
 		  </Route>
 		  <Route path='/login'>
-			<SingIn/>
+			<SignIn/>
 		  </Route>
 		</Switch>
 	  </section>
