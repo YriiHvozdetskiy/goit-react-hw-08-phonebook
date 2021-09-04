@@ -4,7 +4,7 @@ import {authOperations} from "../../../redux/auth";
 import s from './SignIn.module.scss'
 
 export const SignIn = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,7 +21,7 @@ export const SignIn = () => {
 
   const handleSubmit = e => {
 	e.preventDefault();
-	// dispatch(authOperations.logIn({email, password}))
+	dispatch(authOperations.logIn({email, password}))
 	setEmail('')
 	setPassword('')
   }
