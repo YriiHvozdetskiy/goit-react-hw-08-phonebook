@@ -1,6 +1,4 @@
 import {NavLink} from "react-router-dom";
-import {SignUp} from "./SignUp/SignUp";
-import {SignIn} from "./SignIn/SignIn";
 import s from './AuthNav.module.scss'
 
 export const AuthNav = () => {
