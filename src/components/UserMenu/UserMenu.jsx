@@ -11,7 +11,7 @@ export const UserMenu = () => {
   return (
 	<div className={s.container}>
 	  <img className={s.avatar} src={avatar} alt="avatar"/>
-	  <span className={s.name}>Welcome {name}</span>
+	  <span className={s.name}>Welcome, {name}</span>
 	  <button type='button' onClick={() => dispatch(authOperations.logOut())}>Log out</button>
 	</div>
   )
