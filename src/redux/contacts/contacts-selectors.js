@@ -1,6 +1,6 @@
-const getContacts = state => state.reducer.items;
-const getFilter = state => state.reducer.filter;
-const getError = state => state.reducer.error;
+const getContacts = state => state.contacts.items;
+const getFilter = state => state.contacts.filter;
+const getError = state => state.contacts.error;
 
 const getFilteredContacts = state => {
   const contacts = getContacts(state);
