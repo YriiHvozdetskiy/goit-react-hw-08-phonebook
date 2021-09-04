@@ -3,7 +3,7 @@ import {authReducer} from './auth';
 
 export const store = configureStore({
   reducer: {
-	authReducer
+	auth:authReducer
   },
   devTools: process.env.NODE_ENV === 'development',
 })
