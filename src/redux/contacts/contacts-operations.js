@@ -4,15 +4,6 @@ import toast from 'react-hot-toast';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-const token = {
-  set(token) {
-	axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-	axios.defaults.headers.common.Authorization = '';
-  }
-}
-
 const fetchContactsList = createAsyncThunk(
   'contacts/fetchContactsList',
   async (_, {rejectWithValue}) => {
@@ -35,7 +26,6 @@ const addContact = createAsyncThunk(
 		'/contacts',
 		contact,
 	  );
-	  token.set(data.token);
 	  //показуєм що дод контакт коли запрос на сервер успішний
 	  toast.success(`${contact.name} added to contact`);
 	  return data;
@@ -49,12 +39,12 @@ const addContact = createAsyncThunk(
 
 const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
-  async (id, {rejectWithValue}) => {
+  async (contactId, {rejectWithValue}) => {
 	try {
-	  await axios.delete(`/contacts/${id}`);
+	  await axios.delete(`/contacts/${contactId}`);
 	  //показуєм що удалили контакт коли запрос на сервер успішний
 	  toast.success(`removed `);
-	  return id;
+	  return contactId;
 	} catch (error) {
 	  // показуєм що сталася помилка і відправляєм текст помилки в reducer (error
 	  toast.error('Ой щось пішло не так :(');
