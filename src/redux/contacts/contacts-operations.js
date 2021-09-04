@@ -2,12 +2,23 @@ import axios from 'axios';
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+const token = {
+  set(token) {
+	axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset() {
+	axios.defaults.headers.common.Authorization = '';
+  }
+}
+
 const fetchContactsList = createAsyncThunk(
   'contacts/fetchContactsList',
   async (_, {rejectWithValue}) => {
 	try {
-	  const result = await axios.get('http://localhost:7777/contacts');
-	  return result.data;
+	  const {data} = await axios.get('/contacts');
+	  return data;
 	} catch (error) {
 	  // показуєм що сталася помилка і відправляєм текст помилки в reducer (error)
 	  toast.error('Ой щось пішло не так :(');
@@ -20,13 +31,14 @@ const addContact = createAsyncThunk(
   'contacts/addContact',
   async (contact, {rejectWithValue}) => {
 	try {
-	  const result = await axios.post(
-		'http://localhost:7777/contacts',
+	  const {data} = await axios.post(
+		'/contacts',
 		contact,
 	  );
+	  token.set(data.token);
 	  //показуєм що дод контакт коли запрос на сервер успішний
 	  toast.success(`${contact.name} added to contact`);
-	  return result.data;
+	  return data;
 	} catch (error) {
 	  // показуєм що сталася помилка і відправляєм текст помилки в reducer (error
 	  toast.error('Ой щось пішло не так :(');
@@ -39,7 +51,7 @@ const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
   async (id, {rejectWithValue}) => {
 	try {
-	  await axios.delete(`http://localhost:7777/contacts/${id}`);
+	  await axios.delete(`/contacts/${id}`);
 	  //показуєм що удалили контакт коли запрос на сервер успішний
 	  toast.success(`removed `);
 	  return id;
