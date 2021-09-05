@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {createAsyncThunk} from '@reduxjs/toolkit';
+import toast from "react-hot-toast";
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -38,6 +39,9 @@ const logIn = createAsyncThunk('auth/login',
 	try {
 	  const {data} = await axios.post('/users/login', credentials);
 	  token.set(data.token);
+	  toast('Welcome', {
+		icon: '👋',
+	  });
 	  return data;
 	} catch (error) {
 	  // TODO: Добавить обработку ошибки error.message
@@ -54,6 +58,9 @@ const logOut = createAsyncThunk('auth/logout',
 	try {
 	  await axios.post('/users/logout');
 	  token.unset();
+	  toast('Goodbye', {
+		icon: '👋',
+	  });
 	} catch (error) {
 	  // TODO: Добавить обработку ошибки error.message
 	}
