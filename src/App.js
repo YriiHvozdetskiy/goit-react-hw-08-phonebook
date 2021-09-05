@@ -1,3 +1,4 @@
+import {Toaster} from 'react-hot-toast';
 import {Container} from "./components/Container/Container";
 import {Header} from "./components/Header/Header";
 import {Main} from "./components/Main/Main";
@@ -16,9 +17,26 @@ export default function App() {
   return (
 	!isFetchingCurrent &&
 	(<Container>
-	  <Header/>
-	  <Main/>
-	</Container>)
+		<Header/>
+		<Main/>
+		<Toaster
+		  toastOptions={{
+			success: {
+			  style: {
+				background: 'green',
+				color: '#fff',
+			  },
+			},
+			error: {
+			  style: {
+				background: 'red',
+				color: '#fff',
+			  },
+			},
+		  }}
+		/>
+	  </Container>
+	)
   );
 }
 
