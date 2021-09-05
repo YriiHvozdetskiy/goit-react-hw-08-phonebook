@@ -1,7 +1,7 @@
 export const HomePage = () => {
   return (
 	<>
-	  Welcome
+	 <h1> Welcome to phonebook App</h1>
 	</>)
 }
 
