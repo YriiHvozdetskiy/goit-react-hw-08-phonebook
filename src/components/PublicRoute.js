@@ -10,6 +10,7 @@ export const PublicRoute = ({
 							}) => {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   const shouldRedirect = isLoggedIn && restricted;
+
   return (
 	<Route {...routeProps}>{
 	  shouldRedirect ? <Redirect to={redirectTo}/> : children
