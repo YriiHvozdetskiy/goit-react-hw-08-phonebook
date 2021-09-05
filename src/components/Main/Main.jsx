@@ -4,24 +4,30 @@ import {Contacts} from "../Contacts/Contacts";
 import {SignUp} from "../AuthNav/SignUp/SignUp";
 import {SignIn} from "../AuthNav/SignIn/SignIn";
 import {PrivateRoute} from "../PrivateRoute";
+import {PublicRoute} from "../PublicRoute";
 
 export const Main = () => {
   return (
 	<main>
 	  <section>
 		<Switch>
-		  <Route exact path='/'>
+
+		  <PublicRoute exact path='/'>
 			<HomePage/>
-		  </Route>
-		  <PrivateRoute path='/contacts'>
+		  </PublicRoute>
+
+		  <PublicRoute path='/register' restricted redirectTo='/contacts'>
+			<SignUp/>
+		  </PublicRoute>
+
+		  <PublicRoute path='/login' restricted redirectTo='/contacts'>
+			<SignIn/>
+		  </PublicRoute>
+
+		  <PrivateRoute path='/contacts' redirectTo='/login'>
 			<Contacts/>
 		  </PrivateRoute>
-		  <Route path='/register'>
-			<SignUp/>
-		  </Route>
-		  <Route path='/login'>
-			<SignIn/>
-		  </Route>
+
 		</Switch>
 	  </section>
 	</main>
